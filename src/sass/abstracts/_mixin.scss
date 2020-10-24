@@ -1,0 +1,37 @@
+@mixin appLayout {
+    height: 100vh;
+    width: 100%;
+    background-color:$backgroundColor;
+    display: grid;
+    grid-template-rows: 2fr 9fr 1fr ;
+}
+
+@mixin fontSizeS{
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+}
+
+@mixin fontSizeM{
+    font-size: 1.5rem;
+    letter-spacing: 0.15rem;
+}
+
+@mixin fontSizeL{
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+}
+
+@mixin baseTransition{
+    transition: all 2s ease-in-out;
+}
+
+@mixin flexCenter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin btnInputReset{
+    border: none;
+    outline: none;
+}

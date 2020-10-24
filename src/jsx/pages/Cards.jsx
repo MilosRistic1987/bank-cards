@@ -1,11 +1,21 @@
-import React from 'react'
+import React, {useEffect, useState} from "react";
+import BankCard from "../components/BankCard";
 
 const Cards = () => {
-    return (
-        <div>
-            Cards
-        </div>
-    )
-}
+    const [cards, setCards] = useState([])
+    useEffect(() => {
+        const allCrads = JSON.parse(localStorage.getItem("cardList"));
+       setCards(allCrads)
+    }, [])
+  
 
-export default Cards
+  return (
+    <div className="cardList">
+      {cards.map((el) => (
+        <BankCard cardData={el} />
+      ))}
+    </div>
+  );
+};
+
+export default Cards;
