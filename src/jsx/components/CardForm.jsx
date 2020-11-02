@@ -73,6 +73,7 @@ const CardForm = ({ dataInfo, create }) => {
       <div>
         <label>Username</label>
         <input
+          required
           type="text"
           placeholder="username"
           onChange={(e) => handleInputChange(e)}
@@ -81,28 +82,36 @@ const CardForm = ({ dataInfo, create }) => {
         />
       </div>
       <div className="cardNumber">
-        <label>card number</label>
+        <label title='First digit start with 4, 5 or 6'>card number</label>
         <div>
           <input
-            type="text"
+            maxLength="4"
+            pattern="^[4-6][0-9]{3}$"
+            required
             onChange={(e) => handleInputChange(e)}
             name="number1"
             value={cardInfo.cardNumber.number1}
           />
           <input
-            type="number"
+            maxLength="4"
+            pattern="^[4-6][0-9]{3}$"
+            required
             onChange={(e) => handleInputChange(e)}
             name="number2"
             value={cardInfo.cardNumber.number2}
           />
           <input
-            type="number"
+            maxLength="4"
+            pattern="^[4-6][0-9]{3}$"
+            required
             onChange={(e) => handleInputChange(e)}
             name="number3"
             value={cardInfo.cardNumber.number3}
           />
           <input
-            type="number"
+            maxLength="4"
+            pattern="^[4-6][0-9]{3}$"
+            required
             onChange={(e) => handleInputChange(e)}
             name="number4"
             value={cardInfo.cardNumber.number4}
@@ -112,6 +121,7 @@ const CardForm = ({ dataInfo, create }) => {
       <div>
         <label>Expire on</label>
         <input
+          required
           type="date"
           onChange={(e) => handleInputChange(e)}
           name="dateExpiration"
@@ -120,7 +130,8 @@ const CardForm = ({ dataInfo, create }) => {
       </div>
       <div>
         <select
-          onChange={(e) => handleSelectChange(e)}
+          required
+          onChange={(e) => handleInputChange(e)}
           name="cardType"
           value={cardInfo.cardType}
         >
